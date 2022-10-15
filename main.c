@@ -273,7 +273,7 @@ void toybox_main(void)
 int main(int argc, char *argv[])
 {
   // don't segfault if our environment is crazy
-  if (!*argv) return 127;
+  if (!*argv) return 127; /* 127, return value */
 
   // Snapshot stack location so we can detect recursion depth later.
   // Nommu has special reentry path, !stacktop = "vfork/exec self happened"
